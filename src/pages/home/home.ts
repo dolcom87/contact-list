@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 import {ItemSliding, NavController} from 'ionic-angular';
 
-import {PersonsProvider} from "../../providers/persons/persons";
+import {Person, PersonsProvider} from "../../providers/persons/persons";
 
 import {DetailsPage} from "../details/details";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'page-home',
@@ -11,12 +12,10 @@ import {DetailsPage} from "../details/details";
 })
 export class HomePage {
 
-  persons: Array<any> = [];
+  persons: Observable<[Person]>;
 
   constructor(public navCtrl: NavController, public personsProvider: PersonsProvider) {
-    this.personsProvider.getPerson(10).subscribe(data => {
-      this.persons = data;
-    });
+    this.persons = this.personsProvider.getPersons(10);
   }
 
   getDetails(person: any) {

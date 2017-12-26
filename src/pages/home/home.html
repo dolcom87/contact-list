@@ -8,14 +8,14 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item-sliding #item *ngFor="let person of persons">
+    <ion-item-sliding #item *ngFor="let person of persons | async">
       <button ion-item (click)="getDetails(person)">
         <ion-avatar item-start>
-          <img src="{{person.picture.thumbnail}}">
+          <img src="{{person.thumbnail}}">
         </ion-avatar>
         <div class="paddinged">
-          <h3>{{person.login.username}}</h3>
-          <p text-capitalize>{{person.name.title}} {{person.name.first}} {{person.name.last}}</p>
+          <h3>{{person.username}}</h3>
+          <p text-capitalize>{{person.name}} {{person.last}}</p>
         </div>
       </button>
 

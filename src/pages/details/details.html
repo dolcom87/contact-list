@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-capitalize>{{person.name.title}} {{person.name.first}} {{person.name.last}}</ion-title>
+    <ion-title text-capitalize>{{person.name}} {{person.last}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -11,11 +11,11 @@
   <ion-grid>
     <ion-row>
       <ion-col col-4>
-        <img src="{{person.picture.large}}" alt="">
+        <img src="{{person.large}}" alt="">
       </ion-col>
       <ion-col col-8>
         <ion-list>
-          <ion-item>{{person.login.username}}</ion-item>
+          <ion-item>{{person.username}}</ion-item>
           <ion-item>{{person.email}}</ion-item>
         </ion-list>
       </ion-col>
