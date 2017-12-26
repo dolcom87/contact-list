@@ -6,10 +6,16 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-list>
     <ion-item-sliding #item *ngFor="let person of persons | async">
-      <button ion-item (click)="getDetails(person)" class="paddinged">
+      <ion-item-options side="left">
+        <a href="mailto:{{person.email}}" ion-button icon-only color="primary">
+          <ion-icon name="mail"></ion-icon>
+        </a>
+      </ion-item-options>
+
+      <button ion-item (click)="getDetails(person)">
         <ion-avatar item-start>
           <img src="{{person.thumbnail}}">
         </ion-avatar>
@@ -17,16 +23,11 @@
         <p text-capitalize>{{person.name}} {{person.last}}</p>
       </button>
 
-      <ion-item-options side="left">
-        <button ion-button icon-only (click)="clicked(person, item)" color="primary">
-          <ion-icon name="mail"></ion-icon>
-        </button>
-      </ion-item-options>
 
       <ion-item-options side="right">
-        <button ion-button icon-only (click)="clicked(person, item)" color="secondary">
+        <a href="tel:{{person.phone}}" ion-button icon-only color="secondary">
           <ion-icon name="call"></ion-icon>
-        </button>
+        </a>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
