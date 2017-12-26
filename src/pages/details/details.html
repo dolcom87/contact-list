@@ -1,22 +1,27 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title text-capitalize>{{person.name}} {{person.last}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      <ion-col col-4>
-        <img src="{{person.large}}" alt="">
+      <ion-col class="tac">
+        <img src="{{person.large}}">
       </ion-col>
-      <ion-col col-8>
+    </ion-row>
+    <ion-row>
+      <ion-col>
         <ion-list>
           <ion-item>{{person.username}}</ion-item>
-          <ion-item>{{person.email}}</ion-item>
+          <a href="mailto:{{person.email}}" ion-item>{{person.email}}</a>
+          <a href="tel:{{person.phone}}" ion-item>{{person.phone}}</a>
         </ion-list>
       </ion-col>
     </ion-row>

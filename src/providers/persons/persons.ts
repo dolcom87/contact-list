@@ -8,6 +8,7 @@ export class Person {
   name: string;
   last: string;
   email: string;
+  phone: string;
   username: string;
   thumbnail: string;
   large: string;
@@ -15,6 +16,7 @@ export class Person {
   constructor(public uname: string,
               public ulast: string,
               public uemail: string,
+              public uphone: string,
               public uusername: string,
               public uthumbnail: string,
               public ularge: string) {
@@ -22,6 +24,7 @@ export class Person {
     this.name = uname;
     this.last = ulast;
     this.email = uemail;
+    this.phone = uphone;
     this.username = uusername;
     this.thumbnail = uthumbnail;
     this.large = ularge;
@@ -45,6 +48,7 @@ export class PersonsProvider {
           el.name.first,
           el.name.last,
           el.email,
+          el.phone,
           el.login.username,
           el.picture.thumbnail,
           el.picture.large));
