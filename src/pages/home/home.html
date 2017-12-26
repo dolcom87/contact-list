@@ -1,21 +1,35 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Contacts list
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let person of persons" (click)="getDetails(person)">
-      <ion-avatar item-start>
-        <img src="{{person.picture.thumbnail}}">
-      </ion-avatar>
-      <div class="paddinged">
-        <h3>{{person.login.username}}</h3>
-        <p>{{person.name.title}} {{person.name.first}} {{person.name.last}}</p>
-      </div>
-    </button>
+    <ion-item-sliding #item *ngFor="let person of persons">
+      <button ion-item (click)="getDetails(person)">
+        <ion-avatar item-start>
+          <img src="{{person.picture.thumbnail}}">
+        </ion-avatar>
+        <div class="paddinged">
+          <h3>{{person.login.username}}</h3>
+          <p text-capitalize>{{person.name.title}} {{person.name.first}} {{person.name.last}}</p>
+        </div>
+      </button>
+
+      <ion-item-options side="left">
+        <button ion-button icon-only (click)="clicked(person, item)" color="primary">
+          <ion-icon name="mail"></ion-icon>
+        </button>
+      </ion-item-options>
+
+      <ion-item-options side="right">
+        <button ion-button icon-only (click)="clicked(person, item)" color="secondary">
+          <ion-icon name="call"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>

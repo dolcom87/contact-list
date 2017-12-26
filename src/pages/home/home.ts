@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {ItemSliding, NavController} from 'ionic-angular';
 
 import {PersonsProvider} from "../../providers/persons/persons";
 
@@ -21,5 +21,10 @@ export class HomePage {
 
   getDetails(person: any) {
     this.navCtrl.push(DetailsPage, {data: person});
+  }
+
+  clicked(person: any, item: ItemSliding) {
+    item.close();
+    console.log('clicked person: ' + person.login.username);
   }
 }
