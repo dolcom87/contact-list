@@ -9,12 +9,14 @@ import {HomePage} from '../pages/home/home';
 import {PersonsProvider} from '../providers/persons/persons';
 import {DetailsPage} from "../pages/details/details";
 import {HttpModule} from "@angular/http";
+import {PersonItemComponent} from "../components/person-item/person-item";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DetailsPage
+    DetailsPage,
+    PersonItemComponent
   ],
   imports: [
     BrowserModule,

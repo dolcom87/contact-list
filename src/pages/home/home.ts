@@ -18,7 +18,6 @@ export class HomePage {
               public personsProvider: PersonsProvider) {
 
     this.persons = this.personsProvider.getPersons(10);
-
   }
 
   getDetails(person: any) {
