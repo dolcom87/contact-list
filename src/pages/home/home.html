@@ -9,7 +9,7 @@
 <ion-content>
 
   <ion-list>
-    <person-item *ngFor="let person of persons | async" [person]="person"></person-item>
+    <person-item *ngFor="let person of persons | async | filter : 'female'" [person]="person"></person-item>
   </ion-list>
 
 </ion-content>

@@ -12,6 +12,7 @@ export class Person {
   username: string;
   thumbnail: string;
   large: string;
+  gender: string;
 
   constructor(public uname: string,
               public ulast: string,
@@ -19,7 +20,8 @@ export class Person {
               public uphone: string,
               public uusername: string,
               public uthumbnail: string,
-              public ularge: string) {
+              public ularge: string,
+              public ugender: string) {
 
     this.name = uname;
     this.last = ulast;
@@ -28,6 +30,7 @@ export class Person {
     this.username = uusername;
     this.thumbnail = uthumbnail;
     this.large = ularge;
+    this.gender = ugender;
   }
 }
 
@@ -51,7 +54,8 @@ export class PersonsProvider {
           el.phone,
           el.login.username,
           el.picture.thumbnail,
-          el.picture.large));
+          el.picture.large,
+          el.gender));
       }
     );
   }

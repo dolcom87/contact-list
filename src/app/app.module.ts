@@ -10,13 +10,15 @@ import {PersonsProvider} from '../providers/persons/persons';
 import {DetailsPage} from "../pages/details/details";
 import {HttpModule} from "@angular/http";
 import {PersonItemComponent} from "../components/person-item/person-item";
+import {FilterPipe} from "../pipes/filter/filter";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     DetailsPage,
-    PersonItemComponent
+    PersonItemComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
