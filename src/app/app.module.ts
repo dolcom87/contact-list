@@ -9,21 +9,30 @@ import {HomePage} from '../pages/home/home';
 import {PersonsProvider} from '../providers/persons/persons';
 import {DetailsPage} from "../pages/details/details";
 import {HttpModule} from "@angular/http";
-import {PersonItemComponent} from "../components/person-item/person-item";
-import {FilterPipe} from "../pipes/filter/filter";
+import {NativePageTransitions} from "@ionic-native/native-page-transitions";
+import {ComponentsModule} from "../components/components.module";
+import {SecondPageModule} from "../pages/second/second.module";
+import {PipesModule} from "../pipes/pipes.module";
+import {ThirdPageModule} from "../pages/third/third.module";
+import {FourthPageModule} from "../pages/fourth/fourth.module";
+import {FifthPageModule} from "../pages/fifth/fifth.module";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DetailsPage,
-    PersonItemComponent,
-    FilterPipe
+    DetailsPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ComponentsModule,
+    SecondPageModule,
+    ThirdPageModule,
+    FourthPageModule,
+    FifthPageModule,
+    PipesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,7 +44,9 @@ import {FilterPipe} from "../pipes/filter/filter";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PersonsProvider
+    PersonsProvider,
+    NativePageTransitions
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
