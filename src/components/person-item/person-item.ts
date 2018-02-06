@@ -1,4 +1,6 @@
 import {Component, Input} from '@angular/core';
+import {ModalController} from "ionic-angular";
+import {DetailsPage} from "../../pages/details/details";
 
 @Component({
   selector: 'person-item',
@@ -8,8 +10,11 @@ export class PersonItemComponent {
 
   @Input('person') person: any;
 
-  constructor() {
+  constructor(public modalCtrl: ModalController) {
 
   }
 
+  getDetails(person: any) {
+    this.modalCtrl.create(DetailsPage, {data: person}).present();
+  }
 }
